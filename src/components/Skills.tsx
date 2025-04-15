@@ -1,5 +1,4 @@
-
-import { Code, Braces, Database, Terminal, BrainCircuit, LineChart, Languages, Users, PenTool, BookOpen } from 'lucide-react';
+import { Code, Users, Terminal, BrainCircuit } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface SkillCardProps {
@@ -39,14 +38,9 @@ const Skills = () => {
       skills: ["Python", "JavaScript/TypeScript", "C++", "Java", "SQL"]
     },
     {
-      title: "Desenvolvimento Web",
-      icon: <Braces className="h-5 w-5 text-tech-purple" />,
-      skills: ["React", "Node.js", "HTML/CSS", "RESTful APIs", "GraphQL"]
-    },
-    {
-      title: "Banco de Dados",
-      icon: <Database className="h-5 w-5 text-tech-indigo" />,
-      skills: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase"]
+      title: "Soft Skills",
+      icon: <Users className="h-5 w-5 text-tech-darkblue" />,
+      skills: ["Trabalho em Equipe", "Resolução de Problemas", "Comunicação", "Adaptabilidade"]
     },
     {
       title: "DevOps & Ferramentas",
@@ -57,31 +51,6 @@ const Skills = () => {
       title: "IA & Machine Learning",
       icon: <BrainCircuit className="h-5 w-5 text-tech-blue" />,
       skills: ["TensorFlow", "PyTorch", "Scikit-Learn", "NLP", "Computer Vision"]
-    },
-    {
-      title: "Análise de Dados",
-      icon: <LineChart className="h-5 w-5 text-tech-purple" />,
-      skills: ["Pandas", "NumPy", "Jupyter", "Visualização de Dados", "ETL"]
-    },
-    {
-      title: "Idiomas",
-      icon: <Languages className="h-5 w-5 text-tech-indigo" />,
-      skills: ["Português (Nativo)", "Inglês (Avançado)", "Espanhol (Básico)"]
-    },
-    {
-      title: "Soft Skills",
-      icon: <Users className="h-5 w-5 text-tech-darkblue" />,
-      skills: ["Trabalho em Equipe", "Resolução de Problemas", "Comunicação", "Adaptabilidade"]
-    },
-    {
-      title: "Design & UI/UX",
-      icon: <PenTool className="h-5 w-5 text-tech-blue" />,
-      skills: ["Design Responsivo", "UI/UX Básico", "Acessibilidade", "Prototipagem"]
-    },
-    {
-      title: "Estudos & Pesquisa",
-      icon: <BookOpen className="h-5 w-5 text-tech-purple" />,
-      skills: ["Pesquisa Científica", "Escrita Acadêmica", "Metodologia Ágil", "Inovação"]
     }
   ];
 
@@ -95,7 +64,7 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {skillCategories.map((category, index) => (
             <SkillCard 
               key={index}
