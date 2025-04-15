@@ -1,8 +1,15 @@
 
-import { ArrowRight, BrainCircuit } from 'lucide-react';
+import { ArrowRight, BrainCircuit, FileDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/curriculo-luiz-henrique.pdf';
+    link.download = 'curriculo-luiz-henrique.pdf';
+    link.click();
+  };
+
   return (
     <section id="home" className="py-20 md:py-32 relative overflow-hidden">
       {/* Background decorative element */}
@@ -38,6 +45,14 @@ const Hero = () => {
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <a href="#contact">Entre em Contato</a>
+              </Button>
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                onClick={handleDownloadCV}
+              >
+                <FileDown className="mr-2 h-4 w-4" />
+                Baixar CV
               </Button>
             </div>
           </div>
