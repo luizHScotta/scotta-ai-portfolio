@@ -1,5 +1,5 @@
 
-import { Github, ExternalLink, FolderGit2 } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,6 +11,7 @@ interface ProjectCardProps {
   githubUrl?: string;
   liveUrl?: string;
   image?: string;
+  icon?: React.ReactNode;
 }
 
 const ProjectCard = ({
@@ -19,7 +20,8 @@ const ProjectCard = ({
   tags,
   githubUrl,
   liveUrl,
-  image
+  image,
+  icon
 }: ProjectCardProps) => {
   return (
     <Card className="flex flex-col overflow-hidden transition-all duration-300 h-full hover:shadow-md">
@@ -33,7 +35,7 @@ const ProjectCard = ({
         </div>
       ) : (
         <div className="h-48 bg-gradient-to-br from-tech-blue/10 to-tech-purple/10 flex items-center justify-center">
-          <FolderGit2 size={64} className="text-tech-blue/40" />
+          {icon}
         </div>
       )}
       
