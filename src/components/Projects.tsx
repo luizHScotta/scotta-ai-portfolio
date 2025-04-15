@@ -1,6 +1,6 @@
 
 import ProjectCard from './ProjectCard';
-import { Construction, News, Robot } from 'lucide-react';
+import { Bot, Construction, Newspaper } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -10,19 +10,24 @@ const Projects = () => {
       tags: ["Python", "Prefect", "Docker", "LLama 3", "BeautifulSoup", "Automação"],
       image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&auto=format",
       githubUrl: "https://github.com",
-      icon: <Robot className="h-12 w-12 text-tech-blue/40" />
+      liveUrl: undefined,
+      icon: <Bot className="h-12 w-12 text-tech-blue/40" />
     },
     {
       title: "Projeto em Construção",
       description: "Novo projeto em desenvolvimento. Em breve mais novidades sobre esta iniciativa inovadora.",
       tags: ["Em Desenvolvimento"],
-      icon: <Construction className="h-12 w-12 text-tech-purple/40" />
+      icon: <Construction className="h-12 w-12 text-tech-purple/40" />,
+      githubUrl: undefined,
+      liveUrl: undefined
     },
     {
       title: "Projeto em Construção",
       description: "Novo projeto em desenvolvimento. Em breve mais novidades sobre esta iniciativa inovadora.",
       tags: ["Em Desenvolvimento"],
-      icon: <Construction className="h-12 w-12 text-tech-purple/40" />
+      icon: <Construction className="h-12 w-12 text-tech-purple/40" />,
+      githubUrl: undefined,
+      liveUrl: undefined
     }
   ];
 
