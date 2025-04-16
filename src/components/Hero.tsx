@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button';
 const Hero = () => {
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/curriculo-luiz-henrique.pdf';
-    link.download = 'curriculo-luiz-henrique.pdf';
+    link.href = '/curriculo%20Luiz%20Scotta.pdf'; // Corrected path
+    link.download = 'curriculo Luiz Scotta.pdf'; // Corrected filename
     link.click();
   };
 
@@ -61,7 +61,7 @@ const Hero = () => {
             <div className="relative mx-auto md:mr-0 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-br from-tech-blue to-tech-purple opacity-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
+                src="public/foto perfil.jpg"
                 alt="Luiz Henrique Gualberto Scotta"
                 className="object-cover w-full h-full"
               />

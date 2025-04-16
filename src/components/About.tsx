@@ -54,7 +54,7 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-medium">Ciências da Computação</h4>
-                  <p className="text-sm text-muted-foreground">Universidade Federal do Pará - 7º Período</p>
+                  <p className="text-sm text-muted-foreground">Universidade Faci Wyden - 7º Período</p>
                 </div>
               </div>
             </div>
@@ -63,7 +63,9 @@ const About = () => {
           {/* Timeline Section */}
           <div className="order-1 md:order-2">
             <div className="relative border-l border-border pl-8 py-2 space-y-10">
-              <div className="relative">
+                {
+                /* 
+                <div className="relative">
                 <span className="absolute -left-[41px] flex items-center justify-center w-8 h-8 rounded-full bg-tech-blue text-white">
                   <Award size={18} />
                 </span>
@@ -71,19 +73,20 @@ const About = () => {
                   <h4 className="text-lg font-semibold">Pesquisa Acadêmica em IA</h4>
                   <p className="text-sm text-muted-foreground mb-2">2023 - Presente</p>
                   <p className="text-muted-foreground">
-                    Participação em projetos de pesquisa focados em aplicações de Inteligência Artificial 
-                    para solução de problemas complexos.
+                  Participação em projetos de pesquisa focados em aplicações de Inteligência Artificial 
+                  para solução de problemas complexos.
                   </p>
                 </div>
-              </div>
-              
+                </div>
+                */}
+  
               <div className="relative">
                 <span className="absolute -left-[41px] flex items-center justify-center w-8 h-8 rounded-full bg-tech-purple text-white">
                   <Cpu size={18} />
                 </span>
                 <div>
                   <h4 className="text-lg font-semibold">Estágio no TCE-PA</h4>
-                  <p className="text-sm text-muted-foreground mb-2">2022 - Presente</p>
+                  <p className="text-sm text-muted-foreground mb-2">2025 - Presente</p>
                   <p className="text-muted-foreground">
                     Desenvolvimento de soluções de automação e sistemas baseados em IA para 
                     otimização de processos internos do tribunal.
@@ -97,7 +100,7 @@ const About = () => {
                 </span>
                 <div>
                   <h4 className="text-lg font-semibold">Programador na Siatech</h4>
-                  <p className="text-sm text-muted-foreground mb-2">2020 - Presente</p>
+                  <p className="text-sm text-muted-foreground mb-2">2023 - Presente</p>
                   <p className="text-muted-foreground">
                     Desenvolvimento de software e soluções tecnológicas como programador
                     e sócio minoritário da empresa.
@@ -111,12 +114,26 @@ const About = () => {
                 </span>
                 <div>
                   <h4 className="text-lg font-semibold">Início da Graduação</h4>
-                  <p className="text-sm text-muted-foreground mb-2">2020</p>
+                  <p className="text-sm text-muted-foreground mb-2">2023</p>
                   <p className="text-muted-foreground">
-                    Ingresso no curso de Ciências da Computação na Universidade Federal do Pará.
+                    Ingresso no curso de Ciências da Computação na Faculdade Faci wyden.
                   </p>
                 </div>
               </div>
+
+              <div className="relative">
+                <span className="absolute -left-[41px] flex items-center justify-center w-8 h-8 rounded-full bg-tech-blue text-white">
+                  <GraduationCap size={18} />
+                </span>
+                <div>
+                  <h4 className="text-lg font-semibold">Início da Graduação em engenharia</h4>
+                  <p className="text-sm text-muted-foreground mb-2">2020 - 2022</p>
+                  <p className="text-muted-foreground">
+                    Ingresso no curso de Engenharia da Computação no Cesupa.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
