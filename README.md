@@ -1,21 +1,13 @@
-Follow these steps:
+# Portfólio de Luiz Henrique Scotta
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Portfólio profissional desenvolvido com tecnologias modernas para apresentar projetos, habilidades e experiência em desenvolvimento Full Stack com foco em Inteligência Artificial e automação.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📧 Contato
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Email**: luizhgscotta@gmail.com
+- **GitHub**: [@luizHScotta](https://github.com/luizHScotta)
+- **LinkedIn**: [Luiz Scotta](https://www.linkedin.com/in/luiz-scotta-450572213/)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Desenvolvido com ❤️ e muito café por Luiz Henrique Scotta

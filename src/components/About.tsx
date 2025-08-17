@@ -1,140 +1,104 @@
 
-import { GraduationCap, Briefcase, Cpu, Award } from 'lucide-react';
+import { Coffee, Code, Target, Heart } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="container px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Sobre</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Minha trajetória profissional e acadêmica na área de tecnologia
+    <section id="about" className="py-20 bg-white">
+      <div className="container max-w-7xl px-4 md:px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-h2 font-semibold mb-6 text-[#0A2540]">Sobre</h2>
+          <p className="text-body text-[#2E2E2E] max-w-3xl mx-auto">
+            Conheça um pouco mais sobre minha jornada e filosofia de trabalho
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="space-y-6 order-2 md:order-1">
-            <h3 className="text-2xl font-semibold">Olá, eu sou o Luiz Henrique!</h3>
-            <p className="text-muted-foreground">
-              Sou programador e estudante de Ciências da Computação (7º período), 
-              focado no desenvolvimento de soluções com Inteligência Artificial e automação.
-              Tenho paixão por transformar ideias complexas em aplicações funcionais e intuitivas.
+        <div className="max-w-4xl mx-auto">
+          {/* Introdução */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-[#D9D9D9] rounded-full mb-6">
+              <Code size={32} className="text-[#0A2540]" />
+            </div>
+            <h3 className="text-3xl font-semibold text-[#0A2540] font-space mb-6">Luiz Henrique Scotta (LHS)</h3>
+            <p className="text-xl text-[#2E2E2E] max-w-2xl mx-auto leading-relaxed">
+              Cristão e amante de café, vim da Engenharia movido pela paixão por matemática. 
+              No primeiro contato com programação, mudei o rumo dos estudos para ciências da computação, onde busquei conhecimento em todas as etapas do desenvolvimento.
             </p>
-            
-            <p className="text-muted-foreground">
-              Atualmente, divido meu tempo entre meus estudos universitários e atuações 
-              profissionais, sempre buscando aprimorar minhas habilidades técnicas e 
-              acompanhar as tendências do mercado de tecnologia.
+          </div>
+
+          {/* Filosofia de Trabalho */}
+          <div className="bg-[#F2F4F7] rounded-2xl p-8 shadow-sm border border-[#D9D9D9] mb-12">
+            <h4 className="text-2xl font-semibold text-[#0A2540] mb-6 text-center">Minha Filosofia</h4>
+            <p className="text-lg text-[#2E2E2E] text-center leading-relaxed">
+              <strong className="text-[#3A7CA5]">Código claro, simples de manter e guiado por resultado.</strong> 
+              Sempre com a mesma ideia: entender o contexto, projetar a solução e entregar em produção, resolvendo problemas de forma eficiente.
             </p>
+          </div>
+
+          {/* Jornada Técnica */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center group">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#D9D9D9] rounded-full mb-4 group-hover:bg-[#3A7CA5] transition-colors">
+                <Code size={24} className="text-[#0A2540] group-hover:text-white" />
+              </div>
+              <h5 className="font-semibold text-[#0A2540] mb-2">Front-end</h5>
+              <p className="text-sm text-[#2E2E2E]">Comecei minha jornada no desenvolvimento de interfaces</p>
+            </div>
             
-            <div className="pt-4 space-y-4">
-              <div className="flex items-start">
-                <div className="mt-1 mr-4 p-2 rounded-md bg-tech-blue/10 text-tech-blue">
-                  <Briefcase size={20} />
-                </div>
-                <div>
-                  <h4 className="font-medium">Siatech</h4>
-                  <p className="text-sm text-muted-foreground">Programador e Sócio Minoritário</p>
-                </div>
+            <div className="text-center group">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#D9D9D9] rounded-full mb-4 group-hover:bg-[#3A7CA5] transition-colors">
+                <Target size={24} className="text-[#0A2540] group-hover:text-white" />
               </div>
-              
-              <div className="flex items-start">
-                <div className="mt-1 mr-4 p-2 rounded-md bg-tech-purple/10 text-tech-purple">
-                  <Cpu size={20} />
-                </div>
-                <div>
-                  <h4 className="font-medium">Tribunal de Contas do Estado do Pará</h4>
-                  <p className="text-sm text-muted-foreground">Estagiário - Projetos de IA e Automação</p>
-                </div>
+              <h5 className="font-semibold text-[#0A2540] mb-2">Back-end</h5>
+              <p className="text-sm text-[#2E2E2E]">Aprofundei no desenvolvimento de sistemas e APIs</p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#D9D9D9] rounded-full mb-4 group-hover:bg-[#3A7CA5] transition-colors">
+                <Heart size={24} className="text-[#0A2540] group-hover:text-white" />
               </div>
-              
-              <div className="flex items-start">
-                <div className="mt-1 mr-4 p-2 rounded-md bg-tech-indigo/10 text-tech-indigo">
-                  <GraduationCap size={20} />
-                </div>
-                <div>
-                  <h4 className="font-medium">Ciências da Computação</h4>
-                  <p className="text-sm text-muted-foreground">Universidade Faci Wyden - 7º Período</p>
-                </div>
-              </div>
+              <h5 className="font-semibold text-[#0A2540] mb-2">IA Aplicada</h5>
+              <p className="text-sm text-[#2E2E2E]">Cheguei à Inteligência Artificial com DevOps</p>
             </div>
           </div>
 
-          {/* Timeline Section */}
-          <div className="order-1 md:order-2">
-            <div className="relative border-l border-border pl-8 py-2 space-y-10">
-                {
-                /* 
-                <div className="relative">
-                <span className="absolute -left-[41px] flex items-center justify-center w-8 h-8 rounded-full bg-tech-blue text-white">
-                  <Award size={18} />
-                </span>
-                <div>
-                  <h4 className="text-lg font-semibold">Pesquisa Acadêmica em IA</h4>
-                  <p className="text-sm text-muted-foreground mb-2">2023 - Presente</p>
-                  <p className="text-muted-foreground">
-                  Participação em projetos de pesquisa focados em aplicações de Inteligência Artificial 
-                  para solução de problemas complexos.
-                  </p>
+          {/* Atuação Atual */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-[#F2F4F7] rounded-2xl p-6 shadow-sm border border-[#D9D9D9]">
+              <div className="flex items-center mb-4">
+                <div className="p-2 rounded-full bg-[#D9D9D9] text-[#0A2540] mr-3">
+                  <Target size={20} />
                 </div>
-                </div>
-                */}
-  
-              <div className="relative">
-                <span className="absolute -left-[41px] flex items-center justify-center w-8 h-8 rounded-full bg-tech-purple text-white">
-                  <Cpu size={18} />
-                </span>
-                <div>
-                  <h4 className="text-lg font-semibold">Estágio no TCE-PA</h4>
-                  <p className="text-sm text-muted-foreground mb-2">2025 - Presente</p>
-                  <p className="text-muted-foreground">
-                    Desenvolvimento de soluções de automação e sistemas baseados em IA para 
-                    otimização de processos internos do tribunal.
-                  </p>
-                </div>
+                <h5 className="font-semibold text-[#0A2540]">Tribunal de Contas do Estado do Pará</h5>
               </div>
-              
-              <div className="relative">
-                <span className="absolute -left-[41px] flex items-center justify-center w-8 h-8 rounded-full bg-tech-indigo text-white">
-                  <Briefcase size={18} />
-                </span>
-                <div>
-                  <h4 className="text-lg font-semibold">Programador na Siatech</h4>
-                  <p className="text-sm text-muted-foreground mb-2">2023 - Presente</p>
-                  <p className="text-muted-foreground">
-                    Desenvolvimento de software e soluções tecnológicas como programador
-                    e sócio minoritário da empresa.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="relative">
-                <span className="absolute -left-[41px] flex items-center justify-center w-8 h-8 rounded-full bg-tech-darkblue text-white">
-                  <GraduationCap size={18} />
-                </span>
-                <div>
-                  <h4 className="text-lg font-semibold">Início da Graduação</h4>
-                  <p className="text-sm text-muted-foreground mb-2">2023</p>
-                  <p className="text-muted-foreground">
-                    Ingresso no curso de Ciências da Computação na Faculdade Faci wyden.
-                  </p>
-                </div>
-              </div>
-
-              <div className="relative">
-                <span className="absolute -left-[41px] flex items-center justify-center w-8 h-8 rounded-full bg-tech-blue text-white">
-                  <GraduationCap size={18} />
-                </span>
-                <div>
-                  <h4 className="text-lg font-semibold">Início da Graduação em engenharia</h4>
-                  <p className="text-sm text-muted-foreground mb-2">2020 - 2022</p>
-                  <p className="text-muted-foreground">
-                    Ingresso no curso de Engenharia da Computação no Cesupa.
-                  </p>
-                </div>
-              </div>
-
+              <p className="text-[#2E2E2E]">
+                Desenvolvo soluções de automação e IA para apoiar o controle de contas, 
+                transformando processos complexos em sistemas eficientes.
+              </p>
             </div>
+            
+            <div className="bg-[#F2F4F7] rounded-2xl p-6 shadow-sm border border-[#D9D9D9]">
+              <div className="flex items-center mb-4">
+                <div className="p-2 rounded-full bg-[#D9D9D9] text-[#0A2540] mr-3">
+                  <Code size={20} />
+                </div>
+                <h5 className="font-semibold text-[#0A2540]">Siatech</h5>
+              </div>
+              <p className="text-[#2E2E2E]">
+                Como programador e sócio minoritário, transformo problemas de negócio em produto, 
+                sempre com foco em soluções pragmáticas e resultados mensuráveis.
+              </p>
+            </div>
+          </div>
+
+          {/* Características Pessoais */}
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-[#D9D9D9] rounded-full mb-4">
+              <Coffee size={24} className="text-[#0A2540]" />
+            </div>
+            <p className="text-lg text-[#2E2E2E]">
+              <strong className="text-[#3A7CA5]">Gosto de problemas difíceis e de resolvê-los com pragmatismo.</strong> 
+              Cada desafio é uma oportunidade de aprender e crescer.
+            </p>
           </div>
         </div>
       </div>

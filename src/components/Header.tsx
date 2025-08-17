@@ -1,11 +1,21 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -20,14 +30,19 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md border-b border-border">
-      <div className="container flex items-center justify-between h-16 px-4 md:px-6">
+    <header className={cn(
+      "sticky top-0 z-40 w-full transition-all duration-200",
+      scrolled 
+        ? "bg-[#F2F4F7]/95 backdrop-blur-md border-b border-[#D9D9D9] shadow-sm" 
+        : "bg-[#F2F4F7]/90 backdrop-blur-sm"
+    )}>
+      <div className="container max-w-7xl flex items-center justify-between h-16 px-4 md:px-6">
         <div className="flex items-center">
           <a
             href="#home"
             className="flex items-center cursor-pointer"
           >
-            <span className="text-2xl font-bold bg-gradient-to-r from-tech-blue to-tech-purple bg-clip-text text-transparent">LHS</span>
+            <span className="text-2xl font-bold text-[#0A2540] font-space">LHS</span>
           </a>
         </div>
 
@@ -37,21 +52,21 @@ const Header = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+              className="text-sm font-medium text-[#2E2E2E] hover:text-[#3A7CA5] transition-colors cursor-pointer"
             >
               {item.name}
             </a>
           ))}
 
           <div className="flex items-center space-x-3">
-            <a href="https://github.com/luizscottadev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <Github className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
+            <a href="https://github.com/luizHScotta" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <Github className="h-5 w-5 text-[#2E2E2E] hover:text-[#3A7CA5] transition-colors" />
             </a>
-            <a href="https://linkedin.com/in/luiz-henrique-gualberto-scotta" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <Linkedin className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
+            <a href="https://www.linkedin.com/in/luiz-scotta-450572213/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Linkedin className="h-5 w-5 text-[#2E2E2E] hover:text-[#3A7CA5] transition-colors" />
             </a>
-            <a href="mailto:contato@luizscotta.com" aria-label="Email">
-              <Mail className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
+            <a href="mailto:luizhgscotta@gmail.com" aria-label="Email">
+              <Mail className="h-5 w-5 text-[#2E2E2E] hover:text-[#3A7CA5] transition-colors" />
             </a>
           </div>
         </nav>
@@ -63,6 +78,7 @@ const Header = () => {
             size="icon"
             aria-label="Toggle Menu"
             onClick={toggleMobileMenu}
+            className="text-[#2E2E2E] hover:text-[#3A7CA5] hover:bg-[#D9D9D9]"
           >
             <Menu className="h-6 w-6" />
           </Button>
@@ -72,47 +88,70 @@ const Header = () => {
       {/* Mobile Navigation Menu */}
       <div
         className={cn(
-          "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm md:hidden",
+          "fixed inset-0 z-50 bg-[#0A2540]/80 backdrop-blur-sm md:hidden",
           mobileMenuOpen ? "flex" : "hidden"
         )}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) {
+            setMobileMenuOpen(false);
+          }
+        }}
       >
-        <div className="fixed top-0 right-0 h-full w-3/4 bg-background p-6 shadow-lg">
-          <div className="flex items-center justify-between mb-8">
-            <span className="text-2xl font-bold bg-gradient-to-r from-tech-blue to-tech-purple bg-clip-text text-transparent">
+        <div className="fixed top-0 right-0 h-full w-full bg-[#F2F4F7] shadow-2xl">
+          {/* Header com azul-marinho institucional */}
+          <div className="bg-[#0A2540] px-6 py-4 flex items-center justify-between">
+            <span className="text-xl font-bold text-[#C5A46D]">
               LHS
             </span>
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label="Close Menu"
+            <button
               onClick={toggleMobileMenu}
+              className="w-8 h-8 rounded-full border border-[#3A7CA5] bg-[#F2F4F7] flex items-center justify-center hover:bg-[#D9D9D9] transition-colors"
             >
-              <X className="h-6 w-6" />
-            </Button>
+              <X className="h-4 w-4 text-[#0A2540]" />
+            </button>
           </div>
           
-          <nav className="space-y-6">
+          {/* Menu principal com fundo cinza claro */}
+          <nav className="px-6 py-8 space-y-6 bg-[#F2F4F7]">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block text-lg font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                className="block text-lg font-medium text-[#2E2E2E] hover:text-[#3A7CA5] transition-colors cursor-pointer py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </a>
             ))}
             
-            <div className="pt-6 border-t border-border">
-              <div className="flex space-x-5">
-                <a href="https://github.com/luizscottadev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <Github className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" />
+            {/* Seção de redes sociais */}
+            <div className="pt-8 border-t border-[#D9D9D9]">
+              <h4 className="text-sm font-semibold text-[#444444] mb-4">Redes Sociais</h4>
+              <div className="flex space-x-4">
+                <a 
+                  href="https://github.com/luizHScotta" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="GitHub"
+                  className="p-3 rounded-lg bg-[#D9D9D9] hover:bg-[#3A7CA5] hover:text-white transition-colors"
+                >
+                  <Github className="h-5 w-5 text-[#2E2E2E] hover:text-white" />
                 </a>
-                <a href="https://linkedin.com/in/luiz-henrique-gualberto-scotta" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <Linkedin className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" />
+                <a 
+                  href="https://www.linkedin.com/in/luiz-scotta-450572213/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="LinkedIn"
+                  className="p-3 rounded-lg bg-[#D9D9D9] hover:bg-[#3A7CA5] hover:text-white transition-colors"
+                >
+                  <Linkedin className="h-5 w-5 text-[#2E2E2E] hover:text-white" />
                 </a>
-                <a href="mailto:contato@luizscotta.com" aria-label="Email">
-                  <Mail className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" />
+                <a 
+                  href="mailto:luizhgscotta@gmail.com" 
+                  aria-label="Email"
+                  className="p-3 rounded-lg bg-[#D9D9D9] hover:bg-[#3A7CA5] hover:text-white transition-colors"
+                >
+                  <Mail className="h-5 w-5 text-[#2E2E2E] hover:text-white" />
                 </a>
               </div>
             </div>
