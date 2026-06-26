@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup — Portfólio LHS</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #f0f0f0; color: #111; }
+
+  .device { max-width: 900px; margin: 20px auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+
+  /* HEADER */
+  .header { background: white; border-bottom: 1px solid #e5e7eb; padding: 0 40px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+  .logo { font-size: 20px; font-weight: 900; color: #111; letter-spacing: -1px; }
+  .logo span { color: #059669; }
+  .nav { display: flex; gap: 28px; align-items: center; }
+  .nav a { font-size: 13px; color: #555; text-decoration: none; font-weight: 500; }
+  .nav a:hover { color: #059669; }
+  .nav-cta { background: #059669; color: white !important; padding: 7px 16px; border-radius: 4px; font-weight: 700 !important; font-size: 12px !important; }
+
+  /* HERO */
+  .hero { padding: 80px 40px; display: flex; align-items: center; gap: 40px; border-bottom: 1px solid #f3f4f6; min-height: 480px; }
+  .hero-text { flex: 1; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #059669; font-weight: 700; margin-bottom: 20px; }
+  .hero-tag::before { content: ''; width: 20px; height: 2px; background: #059669; }
+  .hero h1 { font-size: 58px; font-weight: 900; line-height: 0.95; letter-spacing: -3px; color: #111; margin-bottom: 12px; }
+  .hero h1 span { color: #059669; }
+  .hero-sub { font-size: 15px; color: #555; line-height: 1.7; max-width: 400px; margin-bottom: 32px; }
+  .hero-buttons { display: flex; gap: 12px; }
+  .btn-primary { background: #111; color: white; padding: 12px 24px; border-radius: 4px; font-weight: 700; font-size: 13px; text-decoration: none; }
+  .btn-outline { border: 2px solid #059669; color: #059669; padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 13px; text-decoration: none; }
+  .btn-ghost { color: #555; padding: 12px 16px; font-size: 13px; text-decoration: none; font-weight: 500; }
+  .hero-photo { flex-shrink: 0; }
+  .photo-wrap { width: 200px; height: 200px; border-radius: 50%; overflow: hidden; border: 3px solid #059669; box-shadow: 0 0 0 6px #d1fae5; }
+  .photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .photo-placeholder { width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, #d1fae5, #6ee7b7); border: 3px solid #059669; box-shadow: 0 0 0 6px rgba(5,150,105,0.1); display: flex; align-items: center; justify-content: center; font-size: 60px; font-weight: 900; color: #059669; }
+
+  /* STACK STRIP */
+  .stack { padding: 32px 40px; background: #f9fafb; border-bottom: 1px solid #e5e7eb; }
+  .stack-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 16px; font-weight: 600; }
+  .stack-items { display: flex; gap: 10px; flex-wrap: wrap; }
+  .stack-item { display: flex; align-items: center; gap: 6px; background: white; border: 1px solid #e5e7eb; padding: 6px 14px; border-radius: 4px; font-size: 12px; font-weight: 600; color: #333; }
+  .stack-dot { width: 7px; height: 7px; border-radius: 50%; background: #059669; }
+
+  /* ABOUT */
+  .about { padding: 64px 40px; border-bottom: 1px solid #f3f4f6; }
+  .section-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #059669; font-weight: 700; margin-bottom: 10px; }
+  .section-title { font-size: 36px; font-weight: 900; letter-spacing: -1.5px; color: #111; margin-bottom: 20px; }
+  .about-text { font-size: 15px; color: #444; line-height: 1.8; max-width: 600px; margin-bottom: 28px; }
+  .about-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .about-card { border: 1px solid #e5e7eb; padding: 20px; border-radius: 6px; }
+  .about-card h4 { font-size: 13px; font-weight: 700; color: #111; margin-bottom: 6px; }
+  .about-card p { font-size: 12px; color: #666; line-height: 1.6; }
+  .about-card:hover { border-color: #059669; }
+
+  /* PROJECTS */
+  .projects { padding: 64px 40px; background: #f9fafb; border-bottom: 1px solid #e5e7eb; }
+  .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+  .proj-card { background: white; border: 1px solid #e5e7eb; border-radius: 6px; overflow: hidden; }
+  .proj-img { height: 100px; background: linear-gradient(135deg, #d1fae5, #a7f3d0); display: flex; align-items: center; justify-content: center; font-size: 28px; }
+  .proj-body { padding: 16px; }
+  .proj-title { font-size: 13px; font-weight: 800; color: #111; margin-bottom: 6px; }
+  .proj-desc { font-size: 11px; color: #666; line-height: 1.5; margin-bottom: 10px; }
+  .proj-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+  .proj-tag { font-size: 9px; border: 1px solid #059669; color: #059669; padding: 2px 7px; border-radius: 2px; font-weight: 600; }
+
+  /* SKILLS */
+  .skills { padding: 64px 40px; border-bottom: 1px solid #f3f4f6; }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+  .skill-card { border: 1px solid #e5e7eb; padding: 18px; border-radius: 6px; }
+  .skill-card h4 { font-size: 12px; font-weight: 700; color: #111; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .skill-card h4::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #059669; flex-shrink: 0; }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 4px; }
+  .pill { font-size: 10px; background: #f0fdf4; color: #059669; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 3px; font-weight: 600; }
+
+  /* CONTACT */
+  .contact { padding: 64px 40px; background: #111; }
+  .contact .section-tag { color: #6ee7b7; }
+  .contact .section-title { color: white; }
+  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+  .contact-item { border: 1px solid #222; padding: 18px; border-radius: 6px; }
+  .contact-item h4 { font-size: 11px; font-weight: 700; color: #6ee7b7; margin-bottom: 4px; letter-spacing: 1px; text-transform: uppercase; }
+  .contact-item p { font-size: 12px; color: #aaa; }
+
+  /* FOOTER */
+  .footer { padding: 24px 40px; background: #0a0a0a; display: flex; align-items: center; justify-content: space-between; }
+  .footer-logo { font-size: 16px; font-weight: 900; color: white; letter-spacing: -1px; }
+  .footer-logo span { color: #059669; }
+  .footer-text { font-size: 11px; color: #555; }
+</style>
+</head>
+<body>
+<div class="device">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">LH<span>S</span></div>
+    <div class="nav">
+      <a href="#">Sobre</a>
+      <a href="#">Projetos</a>
+      <a href="#">Habilidades</a>
+      <a href="#" class="nav-cta">Contato</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-tag">Programação &amp; Inteligência Artificial</div>
+      <h1>Luiz<br><span>Scotta</span></h1>
+      <p class="hero-sub">Programador e estudante de Ciências da Computação apaixonado por criar soluções com Inteligência Artificial e automação.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">Ver Projetos →</a>
+        <a href="#" class="btn-outline">Contato</a>
+        <a href="#" class="btn-ghost">↓ CV</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-placeholder">L</div>
+    </div>
+  </div>
+
+  <!-- STACK STRIP -->
+  <div class="stack">
+    <div class="stack-label">Stack Principal</div>
+    <div class="stack-items">
+      <div class="stack-item"><span class="stack-dot"></span>Python</div>
+      <div class="stack-item"><span class="stack-dot"></span>React</div>
+      <div class="stack-item"><span class="stack-dot"></span>TypeScript</div>
+      <div class="stack-item"><span class="stack-dot"></span>FastAPI</div>
+      <div class="stack-item"><span class="stack-dot"></span>Docker</div>
+      <div class="stack-item"><span class="stack-dot"></span>LLMs / RAG</div>
+      <div class="stack-item"><span class="stack-dot"></span>PostgreSQL</div>
+      <div class="stack-item"><span class="stack-dot"></span>TailwindCSS</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about">
+    <div class="section-tag">// sobre</div>
+    <div class="section-title">Quem sou eu</div>
+    <p class="about-text">Cristão e amante de café, vim da Engenharia movido pela paixão por matemática. No primeiro contato com programação, mudei o rumo para Ciências da Computação — onde busquei conhecimento em todas as etapas do desenvolvimento.</p>
+    <div class="about-cards">
+      <div class="about-card">
+        <h4>Tribunal de Contas do Pará</h4>
+        <p>Automação e IA para apoiar o controle de contas públicas, transformando processos complexos em sistemas eficientes.</p>
+      </div>
+      <div class="about-card">
+        <h4>Siatech — Programador & Sócio</h4>
+        <p>Transformo problemas de negócio em produto com foco em soluções pragmáticas e resultados mensuráveis.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="projects">
+    <div class="section-tag">// projetos</div>
+    <div class="section-title">O que eu construí</div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-img">🤖</div>
+        <div class="proj-body">
+          <div class="proj-title">newsGPT</div>
+          <div class="proj-desc">Automação que monitora portais de notícias sobre IA e envia resumos diários por email.</div>
+          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">LLama 3</span><span class="proj-tag">Docker</span></div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-img">🌐</div>
+        <div class="proj-body">
+          <div class="proj-title">Site SIATech</div>
+          <div class="proj-desc">Site institucional moderno e responsivo para a empresa SIATech.</div>
+          <div class="proj-tags"><span class="proj-tag">React</span><span class="proj-tag">TypeScript</span><span class="proj-tag">Tailwind</span></div>
+        </div>
+      </div>
+      <div class="proj-card" style="border-style:dashed;border-color:#d1fae5;">
+        <div class="proj-img" style="background:#f0fdf4;">🚧</div>
+        <div class="proj-body">
+          <div class="proj-title" style="color:#059669;">Em Construção</div>
+          <div class="proj-desc" style="color:#999;">Novo projeto em desenvolvimento. Em breve!</div>
+          <div class="proj-tags"><span class="proj-tag">Em breve</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="skills">
+    <div class="section-tag">// habilidades</div>
+    <div class="section-title">Tecnologias</div>
+    <div class="skills-grid">
+      <div class="skill-card"><h4>Linguagens</h4><div class="skill-pills"><span class="pill">Python</span><span class="pill">TypeScript</span><span class="pill">JavaScript</span><span class="pill">Java</span></div></div>
+      <div class="skill-card"><h4>Frameworks</h4><div class="skill-pills"><span class="pill">React</span><span class="pill">FastAPI</span><span class="pill">Django</span><span class="pill">Node.js</span></div></div>
+      <div class="skill-card"><h4>IA & ML</h4><div class="skill-pills"><span class="pill">LLMs</span><span class="pill">RAG</span><span class="pill">TensorFlow</span><span class="pill">NLP</span></div></div>
+      <div class="skill-card"><h4>Banco de Dados</h4><div class="skill-pills"><span class="pill">PostgreSQL</span><span class="pill">MongoDB</span><span class="pill">Redis</span></div></div>
+      <div class="skill-card"><h4>DevOps & Cloud</h4><div class="skill-pills"><span class="pill">Docker</span><span class="pill">AWS</span><span class="pill">CI/CD</span><span class="pill">Git</span></div></div>
+      <div class="skill-card"><h4>Ferramentas</h4><div class="skill-pills"><span class="pill">Figma</span><span class="pill">Postman</span><span class="pill">Jira</span></div></div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact">
+    <div class="section-tag">// contato</div>
+    <div class="section-title">Vamos conversar</div>
+    <div class="contact-grid">
+      <div class="contact-item"><h4>Email</h4><p>luizhgscotta@gmail.com</p></div>
+      <div class="contact-item"><h4>Localização</h4><p>Belém, Pará — Brasil</p></div>
+      <div class="contact-item"><h4>Disponibilidade</h4><p>Freelance & projetos pontuais</p></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">LH<span>S</span></div>
+    <div class="footer-text">© 2025 Luiz Henrique Scotta · Desenvolvido com ❤️ e café</div>
+  </div>
+
+</div>
+</body>
+</html>

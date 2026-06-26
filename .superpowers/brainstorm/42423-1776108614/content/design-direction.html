@@ -1,0 +1,93 @@
+<h2>Qual direção visual combina mais com você?</h2>
+<p class="subtitle">Escolha a estética que melhor representa sua identidade como dev</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="dark-futuristic" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d1117;padding:20px;border-radius:8px;font-family:monospace;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+        <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div>
+        <div style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></div>
+        <div style="width:10px;height:10px;border-radius:50%;background:#28c840;"></div>
+      </div>
+      <div style="color:#00d4ff;font-size:13px;line-height:1.8;">
+        <span style="color:#6a9955;">// Luiz Scotta</span><br>
+        <span style="color:#569cd6;">const</span> <span style="color:#9cdcfe;">dev</span> = {<br>
+        &nbsp;&nbsp;<span style="color:#9cdcfe;">skills</span>: [<span style="color:#ce9178;">"AI"</span>, <span style="color:#ce9178;">"Python"</span>],<br>
+        &nbsp;&nbsp;<span style="color:#9cdcfe;">focus</span>: <span style="color:#ce9178;">"Innovation"</span><br>
+        }
+      </div>
+      <div style="margin-top:14px;display:flex;gap:6px;">
+        <div style="height:6px;flex:2;background:linear-gradient(90deg,#00d4ff,#7b2fff);border-radius:3px;"></div>
+        <div style="height:6px;flex:1;background:#1e2d3d;border-radius:3px;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Dark & Futurista</h3>
+      <p>Fundo escuro com acentos neon (ciano/roxo), estética de terminal, partículas animadas. Forte, técnico, memorável.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="minimal-bold" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#ffffff;padding:20px;border-radius:8px;border:1px solid #eee;">
+      <div style="margin-bottom:10px;">
+        <div style="font-size:11px;color:#999;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Developer</div>
+        <div style="font-size:22px;font-weight:900;color:#111;line-height:1.1;font-family:serif;">Luiz<br>Scotta</div>
+        <div style="width:40px;height:3px;background:#111;margin-top:8px;"></div>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:12px;">
+        <div style="flex:1;height:32px;background:#111;border-radius:4px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:20px;height:2px;background:#fff;"></div>
+        </div>
+        <div style="flex:1;height:32px;background:#f5f5f5;border-radius:4px;border:1px solid #ddd;"></div>
+        <div style="flex:1;height:32px;background:#f5f5f5;border-radius:4px;border:1px solid #ddd;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Minimalista & Bold</h3>
+      <p>Fundo branco limpo, tipografia grande e corajosa, muito espaço em branco, contraste preto e branco. Elegante, sofisticado.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="gradient-vibrant" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,#f093fb 100%);padding:20px;border-radius:8px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.1);"></div>
+      <div style="position:absolute;bottom:-10px;left:20px;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,0.08);"></div>
+      <div style="color:white;font-weight:700;font-size:18px;margin-bottom:6px;position:relative;">Luiz Scotta</div>
+      <div style="color:rgba(255,255,255,0.85);font-size:12px;margin-bottom:14px;position:relative;">Dev · IA · Criatividade</div>
+      <div style="display:flex;gap:6px;position:relative;">
+        <div style="background:rgba(255,255,255,0.25);backdrop-filter:blur(4px);border-radius:20px;padding:4px 12px;color:white;font-size:11px;">Python</div>
+        <div style="background:rgba(255,255,255,0.25);backdrop-filter:blur(4px);border-radius:20px;padding:4px 12px;color:white;font-size:11px;">React</div>
+        <div style="background:rgba(255,255,255,0.25);backdrop-filter:blur(4px);border-radius:20px;padding:4px 12px;color:white;font-size:11px;">AI</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Gradiente & Vibrante</h3>
+      <p>Gradientes ousados roxo/azul/rosa, glassmorphism, formas geométricas flutuantes. Criativo, moderno, destaca-se.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="tech-editorial" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:20px;border-radius:8px;border:1px solid #e9ecef;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+        <div style="grid-column:1/-1;background:#1a1a2e;border-radius:6px;padding:10px;color:white;">
+          <div style="font-size:10px;color:#a0aec0;letter-spacing:1px;">PORTFOLIO</div>
+          <div style="font-size:16px;font-weight:700;color:#e2e8f0;">LH Scotta</div>
+        </div>
+        <div style="background:#e8f4fd;border-radius:6px;padding:8px;border-left:3px solid #3b82f6;">
+          <div style="font-size:9px;color:#3b82f6;font-weight:600;">PROJETOS</div>
+          <div style="font-size:18px;font-weight:700;color:#1e293b;">12+</div>
+        </div>
+        <div style="background:#f0fdf4;border-radius:6px;padding:8px;border-left:3px solid #22c55e;">
+          <div style="font-size:9px;color:#22c55e;font-weight:600;">STACKS</div>
+          <div style="font-size:18px;font-weight:700;color:#1e293b;">20+</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Tech Editorial</h3>
+      <p>Estética de dashboard/editorial, cards de métricas, grids precisos, fundo claro com acentos coloridos. Profissional, data-driven.</p>
+    </div>
+  </div>
+
+</div>
