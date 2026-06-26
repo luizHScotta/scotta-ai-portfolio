@@ -16,7 +16,7 @@ const projects = [
     title: 'Site SIATech',
     description: 'Site institucional desenvolvido para a empresa SIATech, com design moderno e responsivo usando React, TypeScript e TailwindCSS.',
     technologies: ['React', 'TypeScript', 'TailwindCSS'],
-    image: '/proj-site-siatech.webp',
+    image: '/proj-site-siatech2.webp',
     link: 'https://www.siatechbrasil.com.br/',
     github: '',
   },
