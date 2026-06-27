@@ -20,6 +20,15 @@ const projects = [
     link: 'https://www.siatechbrasil.com.br/',
     github: '',
   },
+  {
+    id: 3,
+    title: 'Scotta Fisioterapia',
+    description: 'Site institucional para o Dr. Angelo Scotta, fisioterapeuta especialista em ortopedia e esporte. Design moderno e responsivo com agendamento de consultas, desenvolvido em React, TypeScript e TailwindCSS.',
+    technologies: ['React', 'TypeScript', 'TailwindCSS'],
+    image: '/proj-scotta-fisio.webp',
+    link: 'https://www.scottafisioterapia.com.br/',
+    github: '',
+  },
 ];
 
 const Projects = () => (
